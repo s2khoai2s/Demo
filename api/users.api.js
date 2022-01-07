@@ -6,8 +6,7 @@ const {
     updateById,
   } = require("../mongodb/users.dao");
   
-  const createUser = async ({name, province, district, gender, birthday, phone, email}) => {
-      const data =  {name, province, district, gender, birthday, phone, email}
+  const createUser = async (data) => {
     return await save(data);
   }
   
@@ -19,8 +18,8 @@ const {
     return await getById(id);
   }
 
-  const updateUser = async (id,{name, province, district, gender, birthday, phone, email}) => {
-    return await updateById(id, {name, province, district, gender, birthday, phone, email});
+  const updateUser = async (id,data) => {
+    return await updateById(id, data);
   }
   
   const deleteUser = async (id) => {
